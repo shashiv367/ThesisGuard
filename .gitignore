@@ -1,0 +1,141 @@
+# =============================================================================
+# ThesisGuard � Root .gitignore
+# Covers: Python backend, Vite/React frontend, secrets, OS, editors, ML cache
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# SECRETS & ENVIRONMENT (NEVER commit these)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*service_account*
+secrets/
+credentials/
+
+# -----------------------------------------------------------------------------
+# PYTHON � Backend (thesisguard-engine)
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.class
+*.so
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+coverage.xml
+
+# mypy / pyright
+.mypy_cache/
+.pytype/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# -----------------------------------------------------------------------------
+# NODE / VITE � Frontend (thesisguard-frontend)
+# -----------------------------------------------------------------------------
+node_modules/
+dist/
+dist-ssr/
+*.local
+.cache/
+.turbo/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# -----------------------------------------------------------------------------
+# ML / AI MODEL CACHE (large binary, re-downloadable)
+# -----------------------------------------------------------------------------
+chroma_store/
+*.chroma/
+huggingface/
+.cache/huggingface/
+model_cache/
+*.bin
+*.safetensors
+*.onnx
+*.pt
+*.pth
+pytorch_model*
+tf_model*
+flax_model*
+
+# -----------------------------------------------------------------------------
+# PROJECT-SPECIFIC GENERATED DIRECTORIES
+# -----------------------------------------------------------------------------
+temp/
+tmp/
+pan_data/
+raid_data/
+results/
+test_docs/
+
+# -----------------------------------------------------------------------------
+# OS-GENERATED
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# -----------------------------------------------------------------------------
+# EDITOR & IDE
+# -----------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.iml
+*.ipr
+*.iws
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+.history/
+
+# Misc
+*.bak
+*.orig
+*.patch

@@ -1,0 +1,832 @@
+/* ==========================================================================
+   ThesisGuard Modern Design System
+   ========================================================================== */
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   1. TOP NAVIGATION BAR (Eliminates title/auth overlap completely)
+   -------------------------------------------------------------------------- */
+.app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+.navbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.85rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.brand-name span {
+  color: #2563eb;
+}
+
+.brand-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid #bfdbfe;
+}
+
+.user-profile-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+}
+
+.avatar-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.user-email-text {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #334155;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-signout-btn {
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 0.45rem 0.95rem;
+  border-radius: 8px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.nav-signout-btn:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   2. MAIN CONTAINER & HERO SECTION
+   -------------------------------------------------------------------------- */
+.app-main {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem 2rem;
+  flex: 1;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
+  border: 1px solid rgba(191, 219, 254, 0.8);
+  color: #1d4ed8;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   3. AUTHENTICATION CARD
+   -------------------------------------------------------------------------- */
+.auth-card {
+  max-width: 460px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  padding: 2.25rem;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.auth-header h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.4rem 0;
+}
+
+.auth-header p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.segmented-control {
+  display: flex;
+  background: #f1f5f9;
+  padding: 0.25rem;
+  border-radius: 10px;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.segmented-btn {
+  flex: 1;
+  background: transparent;
+  color: #64748b;
+  border: none;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.segmented-btn-active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.auth-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #0f172a;
+  background-color: #f8fafc;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  background-color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary-gradient:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary-gradient:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary-gradient:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. SCANNER CARD (Upload vs Paste Text)
+   -------------------------------------------------------------------------- */
+.scanner-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.scanner-nav-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.scanner-nav {
+  display: inline-flex;
+  background: #f1f5f9;
+  padding: 0.3rem;
+  border-radius: 12px;
+  gap: 0.35rem;
+  border: 1px solid #e2e8f0;
+}
+
+.scanner-tab {
+  background: transparent;
+  color: #475569;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.scanner-tab-active {
+  background: #ffffff;
+  color: #2563eb;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Dropzone Styling */
+.dropzone-container {
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.dropzone-container:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.dropzone-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.dropzone-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.35rem 0;
+}
+
+.dropzone-hint {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.file-hidden-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Selected File Pill */
+.selected-file-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.file-info-icon {
+  color: #2563eb;
+  display: flex;
+}
+
+.file-info-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.file-remove-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.2rem;
+  display: flex;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.file-remove-btn:hover {
+  color: #b91c1c;
+}
+
+/* Text Mode Input Container */
+.text-mode-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.modern-textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.6;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+.modern-textarea:focus {
+  background: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.textarea-stats {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.scanner-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.scanner-submit-btn {
+  min-width: 220px;
+  padding: 0.95rem 2rem;
+  font-size: 1rem;
+}
+
+.error-banner {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.25rem;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   5. RESULTS SECTION & KPI METRICS DASHBOARD
+   -------------------------------------------------------------------------- */
+.results-section {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  padding: 2.25rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.results-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.results-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* KPI Summary Cards Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kpi-title {
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.kpi-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.kpi-desc {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   6. TABLE OVERHAUL (Fixed Widths, High Contrast, No Squished Text)
+   -------------------------------------------------------------------------- */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.report-table {
+  width: 100%;
+  min-width: 1080px; /* Prevents squishing on desktop & tablets */
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.report-table thead th {
+  background: #f8fafc;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1rem 1.15rem;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.report-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease;
+}
+
+.report-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.report-table tbody td {
+  padding: 1rem 1.15rem;
+  vertical-align: top;
+  font-size: 0.875rem;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+/* Column Specific Styling */
+.col-idx {
+  width: 50px;
+  text-align: center;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.col-text {
+  width: 250px;
+}
+
+.text-snippet-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.825rem;
+  color: #334155;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.col-type {
+  width: 120px;
+  text-align: center;
+}
+
+.col-score {
+  width: 100px;
+  text-align: center;
+}
+
+.score-pill {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.score-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.score-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.score-low {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.col-ai {
+  width: 190px;
+  text-align: center;
+}
+
+.col-tags {
+  width: 180px;
+}
+
+.tags-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.keyword-chip {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #dbeafe;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.col-summary {
+  min-width: 240px;
+  width: 280px;
+}
+
+.summary-text-block {
+  color: #334155;
+  font-size: 0.825rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge-exact {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.badge-semantic {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.badge-none {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.badge-ai {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+  border: 1px solid #d8b4fe;
+}
+
+.badge-human {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   7. RESPONSIVE DESIGN ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 840px) {
+  .navbar-inner {
+    padding: 0.75rem 1.25rem;
+  }
+  
+  .brand-badge {
+    display: none;
+  }
+  
+  .app-main {
+    padding: 1.5rem 1rem 3rem 1rem;
+  }
+  
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  
+  .scanner-card,
+  .results-section {
+    padding: 1.5rem 1rem;
+  }
+}

@@ -1,0 +1,4 @@
+Configuration,Precision,Recall,F1,TP,FP,FN
+Exact-Match Only,1.0,0.5,0.6667,1,0,1
+Semantic Layer Only,1.0,0.5,0.6667,1,0,1
+Combined Pipeline,1.0,0.5,0.6667,1,0,1

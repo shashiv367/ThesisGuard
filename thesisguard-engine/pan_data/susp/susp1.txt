@@ -1,0 +1,1 @@
+Plagiarism detection engines often use n-gram shingling to catch verbatim copying. In the final analysis, the results were inconclusive but promising. This is a concluding sentence.

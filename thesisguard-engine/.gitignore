@@ -1,0 +1,78 @@
+# ThesisGuard Engine � Backend .gitignore
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*service_account*
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+.tox/
+
+# Type checkers
+.mypy_cache/
+.pytype/
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+sdist/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# ML model cache (large binaries, re-downloadable)
+chroma_store/
+model_cache/
+.cache/huggingface/
+*.bin
+*.safetensors
+*.onnx
+*.pt
+*.pth
+pytorch_model*
+tf_model*
+
+# Generated / temporary project dirs
+temp/
+tmp/
+pan_data/
+raid_data/
+results/
+test_docs/
+test_docs/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
