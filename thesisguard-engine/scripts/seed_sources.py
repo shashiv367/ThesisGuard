@@ -16,7 +16,7 @@ This script:
 
 import os
 import sys
-import fitz  # PyMuPDF
+import pymupdf  # PyMuPDF
 
 # Add project root to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -144,7 +144,7 @@ def create_test_pdf():
     os.makedirs("test_docs", exist_ok=True)
     pdf_path = os.path.join("test_docs", "test_plagiarised_paper.pdf")
 
-    doc = fitz.open()
+    doc = pymupdf.open()
     
     # Split into pages (rough split by chapters)
     paragraphs = [p.strip() for p in TEST_DOCUMENT_TEXT.strip().split("\n\n") if p.strip()]
@@ -155,7 +155,7 @@ def create_test_pdf():
         page = doc.new_page(width=595, height=842)  # A4
         page_text = "\n\n".join(paragraphs[page_start:page_start + page_size])
         page.insert_textbox(
-            fitz.Rect(50, 50, 545, 792),
+            pymupdf.Rect(50, 50, 545, 792),
             page_text,
             fontsize=11,
             fontname="helv",

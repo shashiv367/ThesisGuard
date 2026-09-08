@@ -4,7 +4,7 @@ import sys
 # Add project root to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import fitz
+import pymupdf
 import docx
 from app.services.extraction_service import extract_text, chunk_text
 
@@ -13,7 +13,7 @@ def create_fixtures():
     
     pdf_path = "tests/fixtures/sample.pdf"
     if not os.path.exists(pdf_path):
-        doc = fitz.open()
+        doc = pymupdf.open()
         page = doc.new_page()
         text = (
             "This is the first sentence of our sample PDF. "
@@ -23,7 +23,7 @@ def create_fixtures():
             "Let's add a fifth one to test overlap. "
             "Finally, a sixth sentence just to be sure."
         )
-        page.insert_textbox(fitz.Rect(50, 50, 500, 500), text, fontsize=12)
+        page.insert_textbox(pymupdf.Rect(50, 50, 500, 500), text, fontsize=12)
         doc.save(pdf_path)
         print(f"Created {pdf_path}")
     

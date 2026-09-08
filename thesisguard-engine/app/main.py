@@ -4,9 +4,16 @@ from contextlib import asynccontextmanager
 from app.services.db_service import init_schema
 from app.routes import check_routes, auth_routes
 
+import os
+from dotenv import load_dotenv
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup logic
+    load_dotenv()
+    if not os.getenv("HF_TOKEN"):
+        print("WARNING: HF_TOKEN is not set in the environment. You may experience rate limits or warnings from Hugging Face.")
+    
     print("Initializing database schema...")
     init_schema()
     yield

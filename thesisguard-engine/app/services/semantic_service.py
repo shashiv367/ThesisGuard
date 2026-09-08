@@ -1,10 +1,15 @@
+import os
+from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 from psycopg2.extras import execute_values
 from app.services.db_service import get_connection
 
+load_dotenv()
+HF_TOKEN = os.getenv("HF_TOKEN")
+
 # Load the SBERT model globally so it's loaded only once in memory
 # and can be shared by other modules (like keyword_service)
-model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer("all-MiniLM-L6-v2", token=HF_TOKEN)
 
 
 def batch_encode(chunks: list[str]):

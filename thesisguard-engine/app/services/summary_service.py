@@ -1,9 +1,14 @@
+import os
+from dotenv import load_dotenv
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+load_dotenv()
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 # Load and cache the summarizer at the module level
 # We use DistilBART for a good balance of speed (CPU) and abstractive quality
-tokenizer = AutoTokenizer.from_pretrained("sshleifer/distilbart-cnn-12-6")
-model = AutoModelForSeq2SeqLM.from_pretrained("sshleifer/distilbart-cnn-12-6")
+tokenizer = AutoTokenizer.from_pretrained("sshleifer/distilbart-cnn-12-6", token=HF_TOKEN)
+model = AutoModelForSeq2SeqLM.from_pretrained("sshleifer/distilbart-cnn-12-6", token=HF_TOKEN)
 
 # In-memory cache: avoids re-summarizing the same source text within a session.
 # Key = first 200 chars of input text (enough to deduplicate matching chunks).

@@ -1,4 +1,4 @@
-# ThesisGuard Frontend — .gitignore
+# ThesisGuard Frontend ï¿½ .gitignore
 
 # Dependencies
 node_modules/
@@ -7,7 +7,7 @@ node_modules/
 dist/
 dist-ssr/
 
-# Local env files
+# Local env files â€” never commit real secrets
 .env
 .env.*
 !.env.example

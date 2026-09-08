@@ -1,5 +1,5 @@
 import re
-import fitz  # PyMuPDF
+import pymupdf  # PyMuPDF
 import docx
 import nltk
 from nltk.tokenize import sent_tokenize
@@ -17,7 +17,7 @@ except LookupError:
 
 def extract_text_pdf(path: str) -> str:
     """Extracts raw text from a PDF."""
-    doc = fitz.open(path)
+    doc = pymupdf.open(path)
     return "\n".join(page.get_text() for page in doc)
 
 def extract_text_docx(path: str) -> str:

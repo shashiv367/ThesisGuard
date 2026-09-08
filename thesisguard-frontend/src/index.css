@@ -1,37 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
 :root {
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
 
-  /* Premium Modern Color System */
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-200: #bfdbfe;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-700: #1d4ed8;
+  /* Warm, Academic Color Palette */
+  --ink-900:   #1a1a2e;
+  --ink-800:   #16213e;
+  --ink-700:   #2d3561;
+  --ink-600:   #3a4480;
 
-  --color-slate-50: #f8fafc;
-  --color-slate-100: #f1f5f9;
-  --color-slate-200: #e2e8f0;
-  --color-slate-300: #cbd5e1;
-  --color-slate-400: #94a3b8;
-  --color-slate-500: #64748b;
-  --color-slate-600: #475569;
-  --color-slate-700: #334155;
-  --color-slate-800: #1e293b;
-  --color-slate-900: #0f172a;
+  --slate-50:  #f8f9fb;
+  --slate-100: #f1f3f7;
+  --slate-200: #e4e8f0;
+  --slate-300: #c8d0df;
+  --slate-400: #9aaabb;
+  --slate-500: #6b7d95;
+  --slate-600: #4a5568;
+  --slate-700: #334155;
+  --slate-800: #1e2a3a;
+  --slate-900: #0f1923;
 
-  --bg-app: #f8fafc;
-  --card-bg: #ffffff;
-  --card-border: #e2e8f0;
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 20px -3px rgba(0, 0, 0, 0.04);
-  --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  /* Warm Accent — deep sapphire with a hint of warmth */
+  --brand-50:  #eef2ff;
+  --brand-100: #dde6ff;
+  --brand-200: #bac9ff;
+  --brand-400: #6685f5;
+  --brand-500: #4361ee;
+  --brand-600: #3451d1;
+  --brand-700: #2940b5;
+
+  /* Semantic colors — softer, less alarming */
+  --red-50:    #fff1f0;
+  --red-100:   #ffe0de;
+  --red-200:   #ffb3ae;
+  --red-600:   #c0392b;
+  --red-700:   #962d22;
+
+  --amber-50:  #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-600: #b45309;
+
+  --green-50:  #f0fdf4;
+  --green-100: #dcfce7;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+
+  --purple-50: #faf5ff;
+  --purple-100:#f3e8ff;
+  --purple-600: #7c3aed;
+
+  --bg-page: #f4f6fa;
+  --card-bg:  #ffffff;
+  --card-border: rgba(0,0,0,0.07);
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+  --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.06);
 
   font-family: var(--font-sans);
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
   font-weight: 400;
-  color: var(--color-slate-800);
-  background-color: var(--bg-app);
+  color: var(--slate-700);
+  background-color: var(--bg-page);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,25 +70,23 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
-  background: 
-    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.06), transparent 45%),
-    radial-gradient(circle at 90% 20%, rgba(124, 58, 237, 0.04), transparent 40%),
-    var(--bg-app);
-  color: var(--color-slate-800);
+  background-color: var(--bg-page);
+  /* Subtle warm paper-like texture gradient */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(67, 97, 238, 0.07), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(124, 58, 237, 0.04), transparent);
+  color: var(--slate-700);
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  text-align: left;
 }
